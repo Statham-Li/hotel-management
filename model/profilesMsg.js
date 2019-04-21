@@ -7,21 +7,24 @@ const ProfileSchema = new Schema({
         type:String,
         required:true
     },
-    identity:{
-        type:String,
-        required:true
-    },
     date:{
-        type:String,
+        type:Array,
         required:true
     },
     name:{
         type:String,
         required:true
     },
-    room:{
+    idCard:{
         type:String,
         required:true
+    },
+    FAB:{
+        type:Boolean,
+        required:true
+    },
+    remarks:{
+        type:String
     }
 })
 

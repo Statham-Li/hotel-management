@@ -23,9 +23,8 @@
 </el-form>
   <el-table
     header-align="center"
-    :data="tableData2"
-    style="width: 100%"
-    :row-class-name="tableRowClassName">
+    :data="roomManageData"
+    style="width: 100%">
     <el-table-column
       align="center"
       prop="date"
@@ -40,14 +39,14 @@
     </el-table-column>
     <el-table-column
       align="center"
-      prop="roomType"
+      prop="type"
       label="房型"
       width="180">
     </el-table-column>
     <el-table-column
       align="center"
-      prop="status"
-      label="状态">
+      prop="name"
+      label="旅客姓名">
     </el-table-column>
   </el-table>
 </div>
@@ -73,29 +72,23 @@
         return '';
       }
     },
+    created(){
+      this.getRoomManageData()
+    },
     data() {
       return {
-        tableData2: [{
-          date: '2016-05-02',
-          room: '1-1',
-          roomType: '大床房',
-          status: '已满',
-        }, {
-          date: '2016-05-04',
-          room: '1-2',
-          roomType: '大床房',
-          status: '空'
-        }, {
-          date: '2016-05-01',
-          room: '1-3',
-          roomType: '标准间',
-          status: '空',
-        }, {
-          date: '2016-05-03',
-          room: '1-4',
-          roomType: '标准间',
-          status: '已满'
-        }]
+        roomManageData: []
+      }
+    },
+    methods:{
+      getRoomManageData(){
+        this.$axios.get('/api/profile').then(res => {
+          console.log(res)
+          this.roomManageData = res.data
+        })
+        .catch(err => {
+          
+        })
       }
     }
   }

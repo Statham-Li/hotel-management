@@ -20,11 +20,11 @@ routerTab.post("/add",passport.authenticate("jwt",{session:false}),(req, res)=>{
     const profileFields = {};
 
     if(req.body.type) profileFields.type = req.body.type;
-    if(req.body.identity) profileFields.identity = req.body.identity;
     if(req.body.date) profileFields.date = req.body.date;
     if(req.body.name) profileFields.name = req.body.name;
-    if(req.body.room) profileFields.room = req.body.room;
-
+    if(req.body.idCard) profileFields.idCard = req.body.idCard;
+    if(req.body.FAB) profileFields.FAB = req.body.FAB;
+    if(req.body.remarks) profileFields.remarks = req.body.remarks;
     new Profile(profileFields).save().then(profile =>{
         res.json(profile)
     })
