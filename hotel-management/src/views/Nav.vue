@@ -18,11 +18,11 @@
           <i class="el-icon-menu"></i>
           <span slot="title"><router-link to="./Service" tag="span">附加服务</router-link></span>
         </el-menu-item>
-        <el-menu-item index="3">
+        <!-- <el-menu-item index="3">
           <i class="el-icon-document"></i>
           <span slot="title"><router-link to="./OrderDetail" tag="span">订单详情</router-link></span>
-        </el-menu-item>
-        <el-menu-item index="4">
+        </el-menu-item> -->
+        <el-menu-item index="3">
           <i class="el-icon-setting"></i>
           <span slot="title"><router-link to="./Complaint" tag="span">投诉举报</router-link></span>
         </el-menu-item>

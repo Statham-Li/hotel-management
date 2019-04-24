@@ -41,11 +41,11 @@ const router = new Router({
       name: 'Service',
       component: Service
     },
-    {
-      path: '/OrderDetail',
-      name: 'OrderDetail',
-      component: OrderDetail
-    },
+    // {
+    //   path: '/OrderDetail',
+    //   name: 'OrderDetail',
+    //   component: OrderDetail
+    // },
     {
       path: '/Complaint',
       name: 'Complaint',

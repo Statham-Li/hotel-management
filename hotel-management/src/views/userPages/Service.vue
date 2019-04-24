@@ -2,7 +2,7 @@
     <div class="block">
         <div class="orderItem">
             <p class="title">基本信息</p>
-            <div class="row"><span class="con">用户名：</span>Agent-Lee</div>
+            <div class="row"><span class="con">用户名：</span>{{this.$store.state.user.name}}</div>
             <div class="row"><span class="con">订单号：</span>1234567</div>
             <div class="row"><span class="con">入住时间：</span>2019/04/02</div>
             <div class="row"><span class="con">用户验证：</span>已通过</div>

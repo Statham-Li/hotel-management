@@ -22,6 +22,7 @@ routerTab.post("/add",passport.authenticate("jwt",{session:false}),(req, res)=>{
     if(req.body.type) profileFields.type = req.body.type;
     if(req.body.date) profileFields.date = req.body.date;
     if(req.body.name) profileFields.name = req.body.name;
+    if(req.body.phone) profileFields.phone = req.body.phone;
     if(req.body.idCard) profileFields.idCard = req.body.idCard;
     if(req.body.FAB) profileFields.FAB = req.body.FAB;
     if(req.body.remarks) profileFields.remarks = req.body.remarks;

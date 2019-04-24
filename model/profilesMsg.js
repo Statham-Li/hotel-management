@@ -15,6 +15,10 @@ const ProfileSchema = new Schema({
         type:String,
         required:true
     },
+    phone:{
+        type:String,
+        required:true
+    },
     idCard:{
         type:String,
         required:true

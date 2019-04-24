@@ -1,11 +1,15 @@
 <template>
     <div class="block">
-        <el-form :model="orderForm" :rules="rules" ref="orderForm" label-width="100px" class="demo-ruleForm">
+        <div style="width:500px;float:left;">
+          <el-form :model="orderForm" :rules="rules" ref="orderForm" label-width="100px" class="demo-ruleForm">
           <el-form-item label="住客姓名" prop="name">
             <el-input v-model="orderForm.name"></el-input>
           </el-form-item>
           <el-form-item label="证件号码" prop="idCard">
             <el-input v-model="orderForm.idCard"></el-input>
+          </el-form-item>
+          <el-form-item label="手机号码" prop="phone">
+            <el-input v-model="orderForm.phone"></el-input>
           </el-form-item>
           <el-form-item label="房间类型" prop="type">
             <el-select v-model="orderForm.type" placeholder="请选择房间类型">
@@ -34,14 +38,72 @@
             <el-button @click="resetForm('orderForm')">重置</el-button>
           </el-form-item>
         </el-form>
+        </div>
+        <div class="show-room" v-if="orderForm.type==='标准间'">
+          <div class="img-con">
+            <img src="../../assets/biaozhun.jpg" alt="">
+          </div>
+          <div class="room-detail">
+            <label>标准间</label>
+            <ul>
+              <li>有窗</li>
+              <li>空调</li>
+              <li>免费wifi</li>
+              <li>独立卫浴</li>
+              <li>电视</li>
+            </ul>
+          </div>
+        </div>
+        <div class="show-room" v-if="orderForm.type==='大床房'">
+          <div class="img-con">
+            <img src="../../assets/dachuang.jpg" alt="">
+          </div>
+          <div class="room-detail">
+            <label>大床房</label>
+            <ul>
+              <li>有窗</li>
+              <li>空调</li>
+              <li>免费wifi</li>
+              <li>独立卫浴</li>
+              <li>电视</li>
+            </ul>
+          </div>
+        </div>
     </div>
 </template>
 <style scoped>
+ul{
+  list-style: none;
+}
 .block{
-  width: 600px;
   margin-left: 100px;
   margin-top: 30px;
   text-align: left;
+}
+.show-room{
+  float: right;
+  margin-right: 30px;
+  width: 300px;
+  height: 100%;
+}
+.show-room .img-con img{
+  width: 100%;
+  height:200px;
+}
+.show-room .room-detail{
+  width: 100%;
+  height: 200px;
+  padding: 20px;
+  box-sizing: border-box;
+}
+.show-room .room-detail li{
+  color:rgb(11, 90, 45);
+  text-align: center;
+  margin-left: 110px;
+  max-width: 80px;
+  border-radius: 4px;
+  margin-bottom: 10px;
+  background: rgb(85,185,127,.5);
 }
 </style>
 <script>
@@ -69,8 +131,9 @@
             { required: true, message: '请输入证件号码', trigger: 'blur' },
             { min: 18, max: 18, message: '请正确输入证件号', trigger: 'blur' }
           ],
-          region: [
-            { required: true, message: '请选择活动区域', trigger: 'change' }
+          phone: [
+            { required: true, message: '请输入手机号码', trigger: 'blur' },
+            { min: 11, max: 11, message: '请正确输入手机号', trigger: 'blur' }
           ],
           date: [
             { type: 'array', required: true, message: '请选择日期', trigger: 'change' }
