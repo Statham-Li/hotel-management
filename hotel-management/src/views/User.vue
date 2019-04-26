@@ -15,12 +15,6 @@
                 </el-table-column>
                 <el-table-column
                   align="center"
-                  prop="room"
-                  label="房间"
-                  width="180">
-                </el-table-column>
-                <el-table-column
-                  align="center"
                   prop="type"
                   label="房型"
                   width="180">
@@ -119,7 +113,7 @@ export default {
       handleSizeChange(page_size){
         // 切换页码
         this.pageData.cur_page = 1;
-        this.pageData.page_size = page_size;
+        this.pageData .page_size = page_size;
         this.tableData = this.roomManageData.filter((item, index) => {
           return index < page_size;
         })
