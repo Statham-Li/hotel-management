@@ -1,7 +1,50 @@
 <template>
     <div class="user">
         <el-tabs v-model="activeName" type="card" id="tab">
-            <el-tab-pane label="消息提醒" name="first">消息提醒</el-tab-pane>
+            <el-tab-pane label="消息提醒" name="first">
+              <el-table
+                header-align="center"
+                :data="roomManageData"
+                style="width: 100%">
+                <el-table-column
+                  align="center"
+                  prop="name"
+                  label="旅客姓名"
+                  width="180">
+                </el-table-column>
+                <el-table-column
+                  align="center"
+                  prop="Qtype"
+                  label="投诉类型"
+                  width="180">
+                  <template slot-scope="scope">
+                    客房卫生
+                  </template>
+                </el-table-column>
+                <el-table-column
+                  align="center"
+                  prop="desc"
+                  label="问题描述">
+                  <template slot-scope="scope">
+                    未打扫
+                  </template>
+                </el-table-column>
+                <el-table-column
+                  align="center"
+                  prop="name"
+                  label="操作">
+                  <template slot-scope="scope">
+                    <el-button
+                      size="mini"
+                      @click="handleEdit(scope.$index, scope.row)">处理</el-button>
+                    <el-button
+                      size="mini"
+                      type="danger"
+                      @click="handleDelete(scope.$index, scope.row)">删除</el-button>
+                  </template>
+                </el-table-column>
+              </el-table>
+            </el-tab-pane>
             <el-tab-pane label="我的信息" name="second">
                 <el-table
                 header-align="center"

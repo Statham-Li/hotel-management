@@ -26,12 +26,12 @@
         label="日期"
         width="180">
       </el-table-column>
-      <!-- <el-table-column
+      <el-table-column
         align="center"
-        prop="room"
-        label="房间"
+        prop="_id"
+        label="订单号"
         width="180">
-      </el-table-column> -->
+      </el-table-column>
       <el-table-column
         align="center"
         prop="type"

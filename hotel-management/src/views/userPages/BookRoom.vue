@@ -44,7 +44,7 @@
             <img src="../../assets/biaozhun.jpg" alt="">
           </div>
           <div class="room-detail">
-            <label>标准间</label>
+            <label>标准间</label><span style="font-weight:bold;color:#f60;">￥200</span>
             <ul>
               <li>有窗</li>
               <li>空调</li>
